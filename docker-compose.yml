@@ -1,0 +1,9 @@
+services:
+  scraper:
+    build: .
+    container_name: football_inpc_scraper
+    env_file: .env
+    volumes:
+      - ./shared_out:/app/data
+    restart: "no"
+    command: python scripts/pipeline.py
